@@ -70,6 +70,60 @@ function updateDashboard(data, newSample) {
     Object.entries(metadata).forEach(([key, value]) => {
       demoInfo.append("h5").text(`${key}: ${value}`);
     });
+
+    // For Gauge Chart
+   let wfreqData = metadata.wfreq;
+    console.log("Washing Frequency Data:", wfreqData);
+
+    let gaugeData = [
+      {
+        type: "indicator",
+        mode: "gauge",
+        value: wfreqData,
+        title: { text: "Belly Button Washing Frequency", font: { size: 30 } },
+        gauge: {
+          axis: { range: [0, 9], tickwidth: 1, tickcolor: "darkblue" },
+          bgcolor: "white",
+          borderwidth: 2,
+          bordercolor: "gray",
+          steps: [
+            { range: [0, 1], color: "#F4F7D5" },  
+            { range: [1, 2], color: "#F1F6B9" }, 
+            { range: [2, 3], color: "#E8F4A5" },  
+            { range: [3, 4], color: "#D9E881" },  
+            { range: [4, 5], color: "#CDE973" },  
+            { range: [5, 6], color: "#C0E05A" },  
+            { range: [6, 7], color: "#9BD744" },  
+            { range: [7, 8], color: "#84C526" },  
+            { range: [8, 9], color: "#6EB803" }   
+          ],
+          
+        }
+      }
+    ];
+    
+    let washLayout = {
+      shape: "angular",
+      width: 500,
+      height: 400,
+      margin: { t: 25, r: 25, l: 25, b: 25 },
+      paper_bgcolor: "white",
+      font: { color: "Black", family: "Tahoma" },
+      annotations: [
+        {
+          x: 0.5,
+          y: 0.5,
+          xref: 'paper',
+          yref: 'paper',
+          text: 'Scrubs Per Week',
+          showarrow: false,
+          font: {
+            size: 16
+          }
+        }],
+    };
+    
+    Plotly.newPlot('gauge', gaugeData, washLayout);
 }
 
 // Function to update the dashboard when a new sample is selected
@@ -77,3 +131,4 @@ function optionChanged(newSample) {
     updateDashboard(data, newSample);
   }
   
+
