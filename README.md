@@ -9,7 +9,7 @@ The dataset reveals that a small handful of microbial species (also called opera
 Sourced from this [LINK](https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json)
 
 ### **HTML and JS code files:**
-- app.js ([static/js directory](https://github.com/amcl11/belly-button-challenge/tree/main/static/js)
+- app.js ([static/js directory)](https://github.com/amcl11/belly-button-challenge/tree/main/static/js)
 - index.html
 
 ### References:
