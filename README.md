@@ -1,4 +1,4 @@
-## Interactive Visualisations with "Belly Button Biodiversity" dataset
+## Interactive Visualisations with the "Belly Button Biodiversity" dataset
 
 Interact with the dataset at https://amcl11.github.io/interactive-visualisation-with-D3.js/ 
 
